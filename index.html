@@ -1,36 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+    <link rel="stylesheet" href="style.css" />
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <article class="article-card | grid">
+          <div class="wrap-detector">
+            <img class="hero-img" src="images/drawers.jpg" alt="" />
+          </div>
+          <div class="article-content | flow">
+            <h3 class="article-content-heading | text-neutral-700 fw-bold">
+              Shift the overall look and feel by adding these wonderful touches
+              to furniture in your home
+            </h3>
+            <p class="article-content-description | fw-regular">
+              Ever been in a room and felt like something was missing? Perhaps
+              it felt slightly bare and uninviting. I’ve got some simple tips to
+              help you make any room feel complete.
+            </p>
 
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+            <div class="article-content-avatar-gp | flex">
+              <img
+                class="avatar-img"
+                src="images/avatar-michelle.jpg"
+                alt="an avatar of Michelle Appleton"
+              />
+              <div class="avatar-name-and-date">
+                <p class="avatar-name | text-neutral-700 fw-bold">
+                  Michelle Appleton
+                </p>
+                <p class="avatar-date | fw-regular">28 Jun 2020</p>
+              </div>
+              <button class="toggle">
+                <img src="images/icon-share.svg" alt="" />
+                <span class="visually-hidden">Share</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
 </html>

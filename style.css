@@ -1,0 +1,251 @@
+:root {
+  --clr-neutral-000: hsl(0 0 100%);
+  --clr-neutral-100: hsl(210, 46%, 95%);
+  --clr-neutral-300: hsl(212, 23%, 69%);
+  --clr-neutral-500: hsl(214, 17%, 51%);
+  --clr-neutral-700: hsl(217, 19%, 35%);
+
+  --fs-body: 0.8125rem;
+  --fs-article-componet-heading: 1.125rem;
+  --fs-avatar-name: 0.9375rem;
+
+  --ff-base: "Manrope", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* General Styling */
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-300);
+  background-color: var(--clr-neutral-100);
+
+  display: grid;
+  place-content: center;
+  min-block-size: 100svh;
+}
+
+.article-content-heading {
+  font-size: var(--fs-article-componet-heading);
+}
+
+.avatar-name {
+  font-size: var(--fs-avatar-name);
+}
+
+/* Utility Classes */
+
+.grid {
+  display: grid;
+  gap: var(--grid-spacer, 1rem);
+}
+
+.flex {
+  display: flex;
+  gap: var(--flex-spacer, 1rem);
+}
+
+.wrapper {
+  width: min(100% - 2rem, 700px);
+  margin-inline: auto;
+}
+
+.flow > *:not(:first-child) {
+  margin-block-start: var(--flow-spacer, 1.5em);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.text-neutral-500 {
+  color: var(--clr-neutral-500);
+}
+
+.text-neutral-700 {
+  color: var(--clr-neutral-700);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-300 {
+  background-color: var(--clr-neutral-300);
+}
+
+.bg-neutral-500 {
+  background-color: var(--clr-neutral-500);
+}
+
+.bg-neutral-700 {
+  background-color: var(--clr-neutral-700);
+}
+
+.fw-regular {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* Block */
+
+/* Article */
+
+.article-card {
+  --grid-spacer: none;
+  --_border-radius: 0.75rem;
+
+  border-radius: var(--_border-radius);
+  background-color: var(--clr-neutral-000);
+  overflow: hidden;
+  @media (width > 700px) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 1.5fr;
+  }
+}
+
+.wrap-detector {
+  container-type: inline-size;
+  container-name: wrap-detector;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @container (inline-size > 75cqi) {
+    block-size: 35vh;
+  }
+}
+
+.article-content {
+  padding: 2rem;
+}
+
+/* Avatar */
+
+.article-content-avatar-gp {
+  align-items: center;
+}
+
+.avatar-img {
+  inline-size: 3rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.toggle {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+
+  margin-inline-start: auto;
+
+  border: none;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-100);
+}
+
+.toggle > img {
+  margin: auto;
+}
