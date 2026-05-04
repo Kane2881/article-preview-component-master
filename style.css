@@ -65,7 +65,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
 /* Balance text wrapping on headings */
@@ -78,7 +78,8 @@ h4 {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+svg {
   max-width: 100%;
   display: block;
 }
@@ -103,6 +104,8 @@ body {
   display: grid;
   place-content: center;
   min-block-size: 100svh;
+
+  line-height: 1.8;
 }
 
 .article-content-heading {
@@ -194,6 +197,8 @@ body {
   --grid-spacer: none;
   --_border-radius: 0.75rem;
 
+  position: relative;
+
   border-radius: var(--_border-radius);
   background-color: var(--clr-neutral-000);
   overflow: hidden;
@@ -219,12 +224,17 @@ body {
 }
 
 .article-content {
-  padding: 2rem;
+  --article-content-padding-inline: 2rem;
+  --article-content-padding-block: 3rem;
+  padding-inline: var(--article-content-padding-inline);
+  padding-block-start: var(--article-content-padding-block);
+  padding-block-end: calc(var(--article-content-padding-block) / 2);
 }
 
 /* Avatar */
 
 .article-content-avatar-gp {
+  --flow-spacer: 3rem;
   align-items: center;
 }
 
@@ -235,11 +245,16 @@ body {
   border-radius: 50%;
 }
 
+.toggle-gp {
+  margin-inline-start: auto;
+}
+
 .toggle {
   inline-size: 2.5rem;
   block-size: 2.5rem;
-
-  margin-inline-start: auto;
+  position: relative;
+  isolation: isolate;
+  z-index: 1000;
 
   border: none;
   border-radius: 50%;
@@ -248,4 +263,41 @@ body {
 
 .toggle > img {
   margin: auto;
+}
+
+.social-links {
+  position: absolute;
+  z-index: 99;
+  inset: 0 0 0 0;
+  height: 12vh;
+
+  margin-block-start: auto;
+
+  background-color: var(--clr-neutral-700);
+
+  display: none;
+  display: inline-flex;
+  gap: 2rem;
+  padding-inline: var(--article-content-padding-inline);
+  padding-block: var(--article-content-padding-block);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.share-text {
+  text-transform: uppercase;
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.5rem;
+  font-size: 1rem;
+}
+
+.social-link > a {
+  display: inline-block;
+  inline-size: 1.75rem;
+  aspect-ratio: 1;
+}
+
+.social-link > svg {
+  width: 100%;
+  height: 100%;
 }
