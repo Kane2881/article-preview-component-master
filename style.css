@@ -259,6 +259,8 @@ body {
   border: none;
   border-radius: 50%;
   background-color: var(--clr-neutral-100);
+
+  anchor-name: --toggle;
 }
 
 .toggle > img {
@@ -276,12 +278,25 @@ body {
   background-color: var(--clr-neutral-700);
 
   display: none;
-  display: inline-flex;
+  display: flex;
   gap: 2rem;
   padding-inline: var(--article-content-padding-inline);
   padding-block: var(--article-content-padding-block);
   align-items: center;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
+  @media (width > 700px) {
+    position-anchor: --toggle;
+    inset: 0 50% 0 0;
+    height: unset;
+    top: anchor(--toggle);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+}
+
+.social-link {
+  align-self: center;
 }
 
 .share-text {
@@ -289,11 +304,12 @@ body {
   font-weight: var(--fw-regular);
   letter-spacing: 0.5rem;
   font-size: 1rem;
+  line-height: 1.1;
 }
 
 .social-link > a {
-  display: inline-block;
-  inline-size: 1.75rem;
+  display: block;
+  inline-size: clamp(1rem, 5vw, 1.75rem);
   aspect-ratio: 1;
 }
 
