@@ -120,7 +120,7 @@ body {
   color: var(--clr-desaturated-dark-blue);
   background-color: var(--clr-light-grayish-blue);
 
-  position: relative;
+  /* position: relative; */
 }
 
 .card-heading {
@@ -237,8 +237,8 @@ body {
 
 .toggle-btn {
   cursor: pointer;
-  position: relative;
-  isolation: isolate;
+  /* position: relative; */
+  /* isolation: isolate; */
   z-index: 100;
   background: var(--clr-light-grayish-blue);
   border: none;
@@ -266,16 +266,21 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  visibility: hidden;
-  opacity: 0;
-
-  transition: opacity 500ms, visibility 500ms, transfrom 500ms;
-  transition-behavior: allow-discrete;
+  /* visibility: hidden;
+  opacity: 0; */
 }
 
-.social-links-group[aria-hidden="false"] {
+/* .social-links-group[aria-hidden="false"] {
   visibility: visible;
   opacity: 1;
+} */
+
+.toggle-btn[aria-expanded="true"] {
+  background: var(--clr-desaturated-dark-blue);
+}
+
+.toggle-btn[aria-expanded="true"] svg > path {
+  fill: var(--clr-light-grayish-blue);
 }
 
 .share-text {
@@ -306,7 +311,7 @@ body {
 @container (width > 600px) {
   .social-links-group {
     position-anchor: --toggle-btn;
-    isolation: isolate;
+
     z-index: 99;
     inset: unset;
     position-area: top center;
@@ -316,15 +321,25 @@ body {
     padding-inline: 3rem;
   }
 
-  .social-links-group::before {
+  .square {
+    position: absolute;
+    position-anchor: --toggle-btn;
     content: "";
     width: 22px;
     aspect-ratio: 1;
-    background-color: red;
+    background-color: var(--clr-very-dark-grayish-blue);
     rotate: 45deg;
+    position-area: center;
+    top: calc(anchor(top) - 35px);
 
-    position: absolute;
-    z-index: 1000;
-    bottom: anchor(top --toggle-btn);
+    /* visibility: hidden;
+    opacity: 0; */
   }
+}
+
+.social-links-wrapper {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 500ms, visibility 500ms;
 }
